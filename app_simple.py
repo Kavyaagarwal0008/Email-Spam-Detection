@@ -1,5 +1,6 @@
 from flask import Flask, render_template_string, request, jsonify
 import re
+import os
 import numpy as np
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -948,8 +949,9 @@ if __name__ == '__main__':
     print("\n" + "="*50)
     print("🚀 Spam Classifier with Trained Model")
     print("="*50)
-    print(f"📧 Open: http://localhost:5000")
     print(f"🤖 Model accuracy: {accuracy:.2%}")
     print(f"💾 Database: {DATABASE}")
     print("="*50 + "\n")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
