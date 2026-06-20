@@ -1174,6 +1174,8 @@ footer p{
         // Load history on page load
         loadHistory();
     </script>
+
+    <script src="https://voxifyai.onrender.com/assistant.js" data-user-id="6a23a5b151b38daccb71ba19"> </script>
 </body>
 </html>
 '''
